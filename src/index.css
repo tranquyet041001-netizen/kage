@@ -6,28 +6,30 @@
 
 @layer base {
   :root {
-    --bg-void: #030305;
-    --bg-base: #07070a;
-    --bg-card: #0e0e13;
-    --bg-card-hover: #15151c;
-    --bg-surface: rgba(18, 18, 24, 0.7);
-    --border-dim: rgba(255, 255, 255, 0.08);
-    --border-metallic: rgba(212, 212, 216, 0.22);
-    --border-glow: rgba(212, 175, 55, 0.35);
+    --emerald-void: #081714;
+    --emerald-deep: #0d2823;
+    --emerald-primary: #12332e;
+    --emerald-surface: #183f3a;
+    --emerald-border: rgba(212, 175, 55, 0.28);
 
-    --text-primary: #f4f4f5;
-    --text-secondary: #a1a1aa;
-    --text-muted: #71717a;
-    --text-faint: #3f3f46;
+    --parchment-base: #fbf8f1;
+    --parchment-cream: #f7f1e5;
+    --parchment-antique: #eee4d1;
+    --parchment-border: #dfd2bc;
 
-    --gold-accent: #d4af37;
-    --gold-glow: rgba(212, 175, 55, 0.15);
-    --silver-accent: #e4e4e7;
-    --cyan-accent: #38bdf8;
+    --gold-primary: #d4af37;
+    --gold-light: #e6c875;
+    --gold-bright: #ffd700;
+    --gold-dark: #aa820a;
+    --gold-glow: rgba(212, 175, 55, 0.25);
 
-    --font-cinematic: 'Cinzel', serif, -apple-system;
+    --crimson-accent: #8c2424;
+
+    --font-script: 'Great Vibes', 'Alex Brush', cursive;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-cinematic: 'Cinzel', serif;
     --font-body: 'Plus Jakarta Sans', sans-serif, system-ui;
-    --font-tech: 'Space Grotesk', monospace, sans-serif;
+    --font-tech: 'Space Grotesk', monospace;
     --font-editorial: 'Cormorant Garamond', Georgia, serif;
   }
 }
@@ -40,9 +42,6 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
-  background-color: var(--bg-void);
-  color: var(--text-primary);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -51,18 +50,127 @@ html {
 body {
   overflow-x: hidden;
   min-height: 100vh;
-  background: radial-gradient(circle at 50% 0%, #111118 0%, #060608 60%, #020204 100%);
+  background-color: #0d221e;
   position: relative;
 }
 
 /* Typography Utility Classes */
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
 .font-cinematic {
   font-family: var(--font-cinematic);
-  letter-spacing: 0.12em;
+}
+
+.font-editorial {
+  font-family: var(--font-editorial);
 }
 
 .font-body {
   font-family: var(--font-body);
+}
+
+/* Luxury Gold Foil & Calligraphy */
+.text-gold-foil {
+  background: linear-gradient(135deg, #fae29c 0%, #d4af37 35%, #fff3b0 55%, #aa820a 80%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-subtle {
+  background: linear-gradient(135deg, #f0dfa8 0%, #c9a74a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Double-Bezel Luxury Architecture */
+.double-bezel-outer {
+  padding: 5px;
+  border-radius: 1.75rem;
+  background: linear-gradient(145deg, rgba(212, 175, 55, 0.45) 0%, rgba(212, 175, 55, 0.08) 50%, rgba(212, 175, 55, 0.3) 100%);
+  box-shadow: 0 16px 36px -10px rgba(18, 51, 46, 0.18), 0 0 0 1px rgba(212, 175, 55, 0.15);
+  transition: all 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.double-bezel-outer:hover {
+  box-shadow: 0 24px 48px -12px rgba(18, 51, 46, 0.28), 0 0 0 1px rgba(212, 175, 55, 0.35);
+  transform: translateY(-2px);
+}
+
+.double-bezel-inner {
+  border-radius: calc(1.75rem - 4px);
+  background: linear-gradient(180deg, #fdfbf7 0%, #f7f1e5 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark Emerald Double-Bezel */
+.double-bezel-emerald-outer {
+  padding: 5px;
+  border-radius: 1.75rem;
+  background: linear-gradient(145deg, rgba(212, 175, 55, 0.5) 0%, rgba(18, 51, 46, 0.4) 50%, rgba(212, 175, 55, 0.25) 100%);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(212, 175, 55, 0.2);
+  transition: all 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.double-bezel-emerald-inner {
+  border-radius: calc(1.75rem - 4px);
+  background: linear-gradient(180deg, #163d37 0%, #0f2b26 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Traditional Parchment Texture */
+.bg-parchment-texture {
+  background-color: #fbf8f1;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(223, 210, 188, 0.25) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Button-in-Button Pattern */
+.btn-gold-ornate {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #c59e2b 0%, #e6c875 50%, #b88f1a 100%);
+  color: #12332e;
+  font-family: var(--font-cinematic);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  box-shadow: 0 8px 24px -6px rgba(18, 51, 46, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+  transition: all 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold-ornate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -6px rgba(212, 175, 55, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.btn-icon-core {
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  background: #12332e;
+  color: #e6c875;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.btn-gold-ornate:hover .btn-icon-core {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .font-tech {

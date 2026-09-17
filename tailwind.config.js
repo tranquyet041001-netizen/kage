@@ -10,8 +10,28 @@ export default {
       colors: {
         gold: {
           DEFAULT: "#d4af37",
-          light: "#e6c387",
+          light: "#e6c875",
+          bright: "#ffd700",
           dark: "#aa820a",
+          antique: "#997a15",
+          foil: "#caa348",
+        },
+        emerald: {
+          void: "#081714",
+          deep: "#0d2823",
+          primary: "#12332e",
+          surface: "#183f3a",
+          light: "#23534c",
+        },
+        parchment: {
+          DEFAULT: "#fbf8f1",
+          cream: "#f7f1e5",
+          antique: "#eee4d1",
+          border: "#dfd2bc",
+        },
+        crimson: {
+          DEFAULT: "#8c2424",
+          dark: "#661818",
         },
         cinema: {
           black: "#020204",
@@ -22,10 +42,12 @@ export default {
         }
       },
       fontFamily: {
+        script: ["'Great Vibes'", "'Alex Brush'", "cursive"],
+        display: ["'Playfair Display'", "serif"],
         cinematic: ["Cinzel", "serif"],
-        body: ["Plus Jakarta Sans", "sans-serif"],
-        tech: ["Space Grotesk", "monospace"],
-        editorial: ["Cormorant Garamond", "serif"],
+        body: ["'Plus Jakarta Sans'", "sans-serif"],
+        tech: ["'Space Grotesk'", "monospace"],
+        editorial: ["'Cormorant Garamond'", "serif"],
       },
       letterSpacing: {
         cinematic: "0.22em",
