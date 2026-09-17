@@ -42,12 +42,13 @@ export default {
         }
       },
       fontFamily: {
-        script: ["'Great Vibes'", "'Alex Brush'", "cursive"],
+        script: ["'Great Vibes'", "'Alex Brush'", "'Pinyon Script'", "cursive"],
         display: ["'Playfair Display'", "serif"],
         cinematic: ["Cinzel", "serif"],
-        body: ["'Plus Jakarta Sans'", "sans-serif"],
+        body: ["'Be Vietnam Pro'", "'Plus Jakarta Sans'", "sans-serif"],
+        vietnam: ["'Be Vietnam Pro'", "sans-serif"],
         tech: ["'Space Grotesk'", "monospace"],
-        editorial: ["'Cormorant Garamond'", "serif"],
+        editorial: ["'Cormorant Garamond'", "'Playfair Display'", "serif"],
       },
       letterSpacing: {
         cinematic: "0.22em",
